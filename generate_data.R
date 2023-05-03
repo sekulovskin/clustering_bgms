@@ -99,7 +99,7 @@ generate_data <- function(rep, N, p, cat,
       }   
     }
     
-  } else{    # SBM
+  } else if(edge_prior == "mfm-SBM"){    # SBM
     
     Q <- matrix(0, nrow = no.blocks, ncol = no.blocks)
     Q[lower.tri(Q)] = rbeta(n = no.blocks * (no.blocks - 1)/2,
@@ -166,7 +166,7 @@ generate_data <- function(rep, N, p, cat,
 #cat <- c(2,3)
 #alpha <- beta <- 1
 #no.blocks <- 2
-#edge_prior <-  "Beta-Binomial"
+#edge_prior <-  "mfm-SBM"
 #
 #data <- generate_data(rep, N, p, cat, 
 #                      iter = 1e3, 
