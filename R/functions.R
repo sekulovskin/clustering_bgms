@@ -1,5 +1,7 @@
 # Functions to perform the analyses 
-
+library(foreach)
+library(doParallel)  
+#==============================================================================
 # With UI interaction prior --------------------------
 estimate_models_UI <- function(rep, data, N, p, cat, 
                                interaction_prior = "UnitInfo", 
